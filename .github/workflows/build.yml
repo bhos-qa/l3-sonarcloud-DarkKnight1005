@@ -37,6 +37,5 @@ jobs:
         with:
           sonar.projectKey: bhos-qa_l3-sonarcloud-DarkKnight1005
           sonar.organization: bhos-qa
-          sonar.host.url: https://sonarcloud.io
         run: ./gradlew build sonarqube --info
  
