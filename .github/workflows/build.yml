@@ -34,9 +34,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=bhos-qa_l3-sonarcloud-DarkKnight1005
-            -Dsonar.organization=bhos-qa
         run: ./gradlew build sonarqube --info
  
