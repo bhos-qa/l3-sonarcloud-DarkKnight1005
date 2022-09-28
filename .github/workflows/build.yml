@@ -2,8 +2,8 @@ name: Build
 on:
   push:
     branches:
-      - main
       - develop
+      - feature/*
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -34,4 +34,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonarqube --info
+        run: gradle test jacocoTestReport sonarqube
+ 
